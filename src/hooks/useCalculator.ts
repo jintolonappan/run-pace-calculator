@@ -27,7 +27,7 @@ export interface AppState {
 
 const initialState: AppState = {
   mode: 'pace',
-  unit: 'km',
+  unit: 'mi',
   quickDist: '10K',
   customDistRaw: '',
   distKm: 10,
@@ -37,7 +37,7 @@ const initialState: AppState = {
   paceM: 0,
   paceS: 0,
   treadmillGrade: 1,
-  treadmillUnit: 'km',
+  treadmillUnit: 'mi',
 };
 
 // ─── Actions ─────────────────────────────────────────────────────────────────

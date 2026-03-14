@@ -32,7 +32,7 @@ export function DistanceSelector({ selected, customValue, unit, onSelect, onCust
 
   return (
     <div className="space-y-3">
-      <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Distance</p>
+      <p className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider">Distance</p>
 
       {/* Quick-pick pills */}
       <div className="flex flex-wrap gap-2">
@@ -51,18 +51,19 @@ export function DistanceSelector({ selected, customValue, unit, onSelect, onCust
               onClick={() => handleSelect(d)}
               aria-pressed={isSelected}
               className={`
-                flex flex-col items-center px-4 py-2.5 rounded-xl border font-semibold text-sm
-                transition-all duration-150 min-w-[56px]
+                flex flex-col items-center px-4 md:px-5 py-2.5 md:py-3
+                rounded-xl border font-semibold text-sm md:text-base
+                transition-all duration-150 min-w-[56px] md:min-w-[68px]
                 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-1
                 ${isSelected
-                  ? 'bg-brand-500 border-brand-500 text-white shadow-sm'
-                  : 'bg-white border-gray-200 text-gray-700 hover:border-brand-300 hover:text-brand-600'
+                  ? 'bg-brand-500 border-brand-500 text-gray-900 shadow-sm'
+                  : 'bg-white dark:bg-surf-dark border-gray-200 dark:border-border-dark text-gray-700 dark:text-gray-300 hover:border-brand-400 hover:text-brand-600 dark:hover:border-brand-600 dark:hover:text-brand-400'
                 }
               `}
             >
               <span>{DISTANCE_LABELS[d]}</span>
               {subtitle && (
-                <span className={`text-[10px] font-normal mt-0.5 ${isSelected ? 'text-brand-100' : 'text-gray-400'}`}>
+                <span className={`text-[10px] font-normal mt-0.5 ${isSelected ? 'text-gray-700' : 'text-gray-400 dark:text-gray-500'}`}>
                   {subtitle}
                 </span>
               )}
@@ -86,13 +87,17 @@ export function DistanceSelector({ selected, customValue, unit, onSelect, onCust
               placeholder={unit === 'mi' ? 'e.g. 6.2' : 'e.g. 10'}
               aria-label="Custom distance"
               className="
-                w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-lg font-semibold
-                focus:outline-none focus:border-brand-400 transition-colors
-                placeholder:text-gray-300
+                w-full px-4 py-3 border-2 rounded-xl text-lg md:text-xl font-semibold
+                bg-white dark:bg-surf-dark
+                border-gray-200 dark:border-border-dark
+                text-gray-900 dark:text-white
+                placeholder:text-gray-300 dark:placeholder:text-gray-600
+                focus:outline-none focus:border-brand-400 dark:focus:border-brand-500
+                transition-colors
               "
             />
           </div>
-          <span className="text-gray-500 font-semibold text-sm w-6">{unit}</span>
+          <span className="text-gray-500 dark:text-gray-400 font-semibold text-sm w-6">{unit}</span>
         </div>
       )}
     </div>

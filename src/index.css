@@ -15,39 +15,43 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Range input styling */
+/* ── Range input ──────────────────────────────────────────── */
 input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
   height: 6px;
   border-radius: 9999px;
-  background: #e5e7eb;
+  background: #d1fae5;
   cursor: pointer;
+}
+
+.dark input[type="range"] {
+  background: #2a4535;
 }
 
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  background: #f97316;
+  background: #13ec5b;
   cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
   border: 2px solid white;
 }
 
 input[type="range"]::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  background: #f97316;
+  background: #13ec5b;
   cursor: pointer;
   border: 2px solid white;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
 }
 
-/* Number input — hide spinners */
+/* ── Number input — hide spinners ─────────────────────────── */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -58,7 +62,7 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-/* details/summary marker removal */
+/* ── details/summary marker removal ──────────────────────── */
 details > summary {
   list-style: none;
 }

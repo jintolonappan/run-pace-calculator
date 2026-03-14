@@ -27,17 +27,17 @@ export function PaceInput({ minutes, seconds, unit, onChange, disabled, label = 
   };
 
   const fieldClass = `
-    w-16 text-center py-3 border-2 rounded-xl text-xl font-semibold
+    w-16 md:w-20 text-center py-3 md:py-4 border-2 rounded-xl text-xl md:text-2xl font-semibold
     focus:outline-none transition-colors
     ${disabled
-      ? 'border-gray-100 bg-gray-50 text-gray-300 cursor-not-allowed'
-      : 'border-gray-200 bg-white focus:border-brand-400'
+      ? 'border-gray-100 dark:border-[#1f3028] bg-gray-50 dark:bg-[#152b1e] text-gray-300 dark:text-gray-600 cursor-not-allowed'
+      : 'border-gray-200 dark:border-border-dark bg-white dark:bg-surf-dark text-gray-900 dark:text-white focus:border-brand-400 dark:focus:border-brand-500'
     }
   `;
 
   return (
     <div className="space-y-2">
-      <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider">
+      <label className="block text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider">
         {label}
       </label>
       <div role="group" aria-label={label} className="flex items-end gap-1">
@@ -54,9 +54,9 @@ export function PaceInput({ minutes, seconds, unit, onChange, disabled, label = 
             aria-label="Minutes per unit"
             className={fieldClass}
           />
-          <span className="text-[10px] text-gray-400 font-medium">min</span>
+          <span className="text-[10px] text-gray-400 dark:text-gray-500 font-medium">min</span>
         </div>
-        <span className="text-2xl font-light text-gray-300 mb-5">:</span>
+        <span className="text-2xl font-light text-gray-300 dark:text-gray-600 mb-5">:</span>
         <div className="flex flex-col items-center gap-1">
           <input
             ref={sRef}
@@ -71,10 +71,10 @@ export function PaceInput({ minutes, seconds, unit, onChange, disabled, label = 
             aria-label="Seconds per unit"
             className={fieldClass}
           />
-          <span className="text-[10px] text-gray-400 font-medium">sec</span>
+          <span className="text-[10px] text-gray-400 dark:text-gray-500 font-medium">sec</span>
         </div>
         <div className="flex flex-col items-end gap-1 pb-0.5">
-          <span className="text-sm font-semibold text-gray-400 whitespace-nowrap mb-5">
+          <span className="text-sm md:text-base font-semibold text-gray-400 dark:text-gray-500 whitespace-nowrap mb-5">
             /{unit}
           </span>
         </div>
